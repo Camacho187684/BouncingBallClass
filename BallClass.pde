@@ -29,3 +29,48 @@ public void draw(){
   b3.drawBall();
   b3.checkEdges();
 }
+
+public class ball{
+ //Intance Variables
+ private int x;
+ private int y;
+ private int xD;
+ private int yD;
+ private int diameter;
+ 
+ 
+ //Constructors
+ //Assume size (800,800)
+ public ball(){
+   x= (int)(Math.random()*800);
+   y= (int)(Math.random()*800);
+   xD= 5;
+   yD= 5;
+   diameter= (int)(Math.random()*50+10);
+ }
+ 
+ 
+ 
+ //methods
+ public void update(){
+  x+=xD;
+  y+=yD;
+   
+ }
+ 
+ public void drawBall(){
+  ellipse(x,y,diameter,diameter); 
+   
+ }
+ 
+ public void checkEdges(){
+   if(x<0|| x>width){
+     xD =-1*xD;
+   }
+   if(y<0|| y>height){
+     yD =-1*yD;
+   }
+ }
+  
+  
+}
